@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco model="neutral_scene">
+  <worldbody>
+    <geom name="Box_01" type="box" size="0.575 0.425 0.14" pos="0.5 0.2 0.14" quat="0.9659258262890683 0.0 0.0 0.25881904510252074" rgba="0.95 0.64 0.12 1.0" />
+  </worldbody>
+</mujoco>
