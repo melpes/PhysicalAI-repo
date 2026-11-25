@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<NeutralScene version="0.3" unit="m" angleUnit="deg" massUnit="kg" timeUnit="s" upAxis="+Z" handedness="right" colorSpace="sRGB">
+  <Sources>
+    <Source id="ABB_ROB0109EN_G" document="ABB IRB 4600 data sheet ROB0109EN rev G (2023)" />
+    <Source id="ABB_3HAC032885" document="ABB Product specification IRB 4600 3HAC032885 p16, dimensions (175, 495, 1095, 175, 1270 mm)" />
+    <Source id="ABB_CAD_40kg-255_rev05" document="ABB IRB4600_40kg-255 STEP rev05/rev04, link bounding boxes at home pose" />
+  </Sources>
+
+  <Robot id="IRB4600_40_255" manufacturer="ABB" model="IRB 4600-40/2.55" baseLink="Base">
+    <Specification source="ABB_ROB0109EN_G" payload="40.0" armload="20.0" mass="465.0" reach="2.55" height="1.922" positionRepeatability="0.00006" pathRepeatability="0.00028" />
+
+    <Link id="Base" />
+    <Link id="Link1" />
+    <Link id="Link2" />
+    <Link id="Link3" />
+    <Link id="Link4" />
+    <Link id="Link5" />
+    <Link id="Link6" />
+
+    <Joint id="J1" type="Revolute" child="Link1">
+      <Pose relativeTo="Base" source="ABB_3HAC032885"><Position x="0.0" y="0.0" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Axis x="0.0" y="0.0" z="1.0" />
+      <Limit source="ABB_ROB0109EN_G" lower="-180.0" upper="180.0" velocity="175.0" />
+    </Joint>
+    <Joint id="J2" type="Revolute" child="Link2">
+      <Pose relativeTo="Link1" source="ABB_3HAC032885"><Position x="0.175" y="0.0" z="0.495" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Axis x="0.0" y="1.0" z="0.0" />
+      <Limit source="ABB_ROB0109EN_G" lower="-90.0" upper="150.0" velocity="175.0" />
+    </Joint>
+    <Joint id="J3" type="Revolute" child="Link3">
+      <Pose relativeTo="Link2" source="ABB_3HAC032885"><Position x="0.0" y="0.0" z="1.095" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Axis x="0.0" y="1.0" z="0.0" />
+      <Limit source="ABB_ROB0109EN_G" lower="-180.0" upper="75.0" velocity="175.0" />
+    </Joint>
+    <Joint id="J4" type="Revolute" child="Link4">
+      <Pose relativeTo="Link3" source="ABB_3HAC032885"><Position x="0.0" y="0.0" z="0.175" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Axis x="1.0" y="0.0" z="0.0" />
+      <Limit source="ABB_ROB0109EN_G" lower="-400.0" upper="400.0" velocity="250.0" />
+    </Joint>
+    <Joint id="J5" type="Revolute" child="Link5">
+      <Pose relativeTo="Link4" source="ABB_3HAC032885"><Position x="1.27" y="0.0" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Axis x="0.0" y="1.0" z="0.0" />
+      <Limit source="ABB_ROB0109EN_G" lower="-125.0" upper="120.0" velocity="250.0" />
+    </Joint>
+    <Joint id="J6" type="Revolute" child="Link6">
+      <Pose relativeTo="Link5"><Position x="0.0" y="0.0" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Axis x="1.0" y="0.0" z="0.0" />
+      <Limit source="ABB_ROB0109EN_G" lower="-400.0" upper="400.0" velocity="360.0" />
+    </Joint>
+
+    <Frame id="Flange">
+      <Pose relativeTo="Link6"><Position x="0.135" y="0.0" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+    </Frame>
+
+    <Visual id="Base_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="0.676" y="0.514" z="0.213" /></Geometry>
+      <Pose relativeTo="Base"><Position x="-0.063" y="0.0" z="0.1065" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.3" g="0.3" b="0.3" a="1.0" /></Appearance>
+    </Visual>
+    <Visual id="Link1_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="0.622" y="0.542" z="0.552" /></Geometry>
+      <Pose relativeTo="Link1"><Position x="0.047" y="0.049" z="0.43" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.95" g="0.45" b="0.05" a="1.0" /></Appearance>
+    </Visual>
+    <Visual id="Link2_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="0.28" y="0.258" z="1.337" /></Geometry>
+      <Pose relativeTo="Link2"><Position x="0.0" y="-0.184" z="0.5285" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.95" g="0.45" b="0.05" a="1.0" /></Appearance>
+    </Visual>
+    <Visual id="Link3_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="0.534" y="0.398" z="0.475" /></Geometry>
+      <Pose relativeTo="Link3"><Position x="0.086" y="0.05" z="0.0945" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.95" g="0.45" b="0.05" a="1.0" /></Appearance>
+    </Visual>
+    <Visual id="Link4_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="1.041" y="0.228" z="0.196" /></Geometry>
+      <Pose relativeTo="Link4"><Position x="0.8515" y="0.003" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.95" g="0.45" b="0.05" a="1.0" /></Appearance>
+    </Visual>
+    <Visual id="Link5_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="0.16" y="0.131" z="0.16" /></Geometry>
+      <Pose relativeTo="Link5"><Position x="0.0" y="-0.0015" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.3" g="0.3" b="0.3" a="1.0" /></Appearance>
+    </Visual>
+    <Visual id="Link6_Visual" approximate="true" source="ABB_CAD_40kg-255_rev05">
+      <Geometry type="Box"><Size x="0.07" y="0.126" z="0.126" /></Geometry>
+      <Pose relativeTo="Link6"><Position x="0.1" y="0.0" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+      <Appearance><Color r="0.3" g="0.3" b="0.3" a="1.0" /></Appearance>
+    </Visual>
+  </Robot>
+
+  <Object id="Robot_01" ref="IRB4600_40_255" approximate="false">
+    <Pose relativeTo="World"><Position x="0.0" y="0.0" z="0.0" /><Orientation w="1.0" x="0.0" y="0.0" z="0.0" /></Pose>
+  </Object>
+</NeutralScene>
