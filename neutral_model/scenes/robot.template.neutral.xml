@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<NeutralScene version="0.3" unit="m" angleUnit="deg" massUnit="kg" timeUnit="s" upAxis="+Z" handedness="right" colorSpace="sRGB">
+  <Sources>
+    <Source id="" document="" />
+  </Sources>
+
+  <Robot id="" manufacturer="" model="" baseLink="">
+    <Specification source="" payload="" armload="" mass="" reach="" height="" positionRepeatability="" pathRepeatability="" />
+
+    <Link id="" />
+
+    <Joint id="" type="" child="">
+      <Pose relativeTo="" source=""><Position x="" y="" z="" /><Orientation w="" x="" y="" z="" /></Pose>
+      <Axis x="" y="" z="" />
+      <Limit source="" lower="" upper="" velocity="" />
+    </Joint>
+
+    <Frame id="">
+      <Pose relativeTo=""><Position x="" y="" z="" /><Orientation w="" x="" y="" z="" /></Pose>
+    </Frame>
+
+    <Visual id="" approximate="" source="">
+      <Geometry type="Box"><Size x="" y="" z="" /></Geometry>
+      <Pose relativeTo=""><Position x="" y="" z="" /><Orientation w="" x="" y="" z="" /></Pose>
+      <Appearance><Color r="" g="" b="" a="" /></Appearance>
+    </Visual>
+  </Robot>
+
+  <Object id="" ref="" approximate="">
+    <Pose relativeTo="World"><Position x="" y="" z="" /><Orientation w="" x="" y="" z="" /></Pose>
+  </Object>
+</NeutralScene>
